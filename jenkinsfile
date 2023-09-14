@@ -1,29 +1,26 @@
 pipeline {
-    agent any
+  //  agent any
+  agent { node { label 'workstation' } }
+
+    environment {
+      TEST_URL = "google.com"
+      SSH = credentials("centos-ssh")
+    }
 
     stages {
-        stage('Build') {
+
+        stage('Compile') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Hello Jenkins'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo TEST_URL
+                echo SSH
             }
         }
     }
     post {
-    always{
-    echo 'post'
-    // send email
-    //update some JIRA status about the build
-    }
-
+        always{
+              echo 'post'
+              // send email
+             //update some JIRA status about the build
+        }
     }
 }
