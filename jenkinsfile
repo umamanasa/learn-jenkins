@@ -18,4 +18,12 @@ pipeline {
             }
         }
     }
+    post {
+    always{
+    echo 'post'
+    // send email
+    //update some JIRA status about the build
+    }
+
+    }
 }
