@@ -79,5 +79,10 @@ pipeline {
           echo 'world'
         }
       }
+      post {
+        always{
+          echo 'post'
+        }
+      }
     }
   }
