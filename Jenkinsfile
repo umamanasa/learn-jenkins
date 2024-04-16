@@ -25,5 +25,10 @@ pipeline {
         echo 'Hello World'
       }
     }
+    stage('Code Security') {
+      steps {
+        echo 'Hello World'
+      }
+    }
   }
 }
