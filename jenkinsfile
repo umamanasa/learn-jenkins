@@ -2,19 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Compile') {
             steps {
-                echo 'Building..'
+                echo 'Hello World'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Hello World'
             }
         }
-        stage('Deploy') {
+
+        stage('Code Quality') {
             steps {
-                echo 'Deploying....'
+                echo 'Hello World'
+            }
+        }
+
+        stage('Code Security') {
+            steps {
+                echo 'Hello World'
             }
         }
     }
